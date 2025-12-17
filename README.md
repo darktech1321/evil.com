@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SBDomain Takeover by DarkTech</title>
+    <title>CORS</title>
 </head>
 <body>
-    <h1>SBDomain Takeover by DarkTech</h1>
+    <h1>CORS</h1>
 </body>
 </html>
